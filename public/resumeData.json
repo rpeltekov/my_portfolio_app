@@ -1,0 +1,137 @@
+{
+  "main": {
+    "name":"Robert Peltekov",
+    "occupation":"Developer Consultant in Blockchain at Berkeley",
+    "description":"I am currently looking for any and all opportunities to work in software!",
+    "image":"profilepic.jpg",
+    "bio":"I am a first year UC Berkeley student dual majoring in EECS and Business Administration as part of the Berkeley Management, Entreprenuership, and Technology program. I have a wide passion for not only building and developing cool projects, but bringing them and their underlying ideas to the public.",
+    "contactmessage":"Here is where you should write your message to readers to have them get in contact with you.",
+    "email": "robert.peltekov@berkeley.edu",
+    "phone": "424-384-7745",
+    "address":{
+      "city":"Los Angeles",
+      "state":"California"
+    },
+    "website": "http://www.robertpeltekov.com",
+    "resumedownload":"12_27_19_Peltekov_Robert.pdf",
+    "social":[
+      {
+        "name":"linkedin",
+        "url":"https://www.linkedin.com/in/tim-baker-8420009a/",
+        "className":"fa fa-linkedin"
+      },
+      {
+        "name":"github",
+        "url":"http://github.com/tbakerx",
+        "className":"fa fa-github"
+      }
+    ]
+  },
+  "resume":{
+    "skillmessage":"Here you can create a short write-up of your skills to show off to employers",
+    "education":[
+      {
+        "school":"University of California, Berkeley",
+        "degree":"B.S. Electrical Engineering + Computer Science / B.S. Business Administration",
+        "graduated":"May 2023",
+        "description":"Describe your experience at school, what you learned, what useful skills you have acquired etc."
+      },
+      {
+        "school":"Palos Verdes Peninsula High School",
+        "degree":"High School Diploma",
+        "graduated":"June 2019",
+        "description":"Describe your experience at school, what you learned, what useful skills you have acquired etc."
+      }
+    ],
+    "work":[
+      {
+        "company":"Boeing Co. Satellite Systems",
+        "title":"Ground Systems Software Development Intern",
+        "years":"June 2018 - August 2018",
+        "description":"Designed and implemented ground system antenna cost models conserving company time and resources. Maintained and handled Boeing proprietary software and add to capabilities. Delivered solutions to supervising engineers at meetings learning business operations and conduct."
+      },
+      {
+        "company":"Super Cool Studio",
+        "title":"Junior bug fixer",
+        "years":"March 2007 - February 2010",
+        "description":"Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
+      }
+    ],
+    "skills":[
+      {
+        "name":"Git",
+        "level":"60%"
+      },
+      {
+        "name":"Illustrator",
+        "level":"55%"
+      },
+      {
+        "name":"ReactJs",
+        "level":"50%"
+      },
+      {
+        "name":"CSS",
+        "level":"90%"
+      },
+      {
+        "name":"HTML5",
+        "level":"80%"
+      },
+      {
+        "name":"VueJs",
+        "level":"50%"
+      },
+      {
+        "name":"MongoDB",
+        "level":"80%"
+      }
+    ]
+  },
+  "portfolio":{
+    "projects": [
+      {
+        "title":"Canadian Wanderlust",
+        "category":"My Travel Blog for my post-university travels",
+        "image":"canadian-wanderlust.jpg",
+        "url":"https://www.canadianwanderlust.com"
+      },
+      {
+        "title":"Fury Fighting Gear",
+        "category":"(offline now) A fighting gear company I started",
+        "image":"fury-fighting-gear.jpg",
+        "url":"http://www.timbakerdev.com"
+      },
+      {
+        "title":"Original Thai Food",
+        "category":"Website I built for a restaurant I like in Thailand",
+        "image":"original-thai-food.jpg",
+        "url":"http://www.timbakerdev.com/originalthaifood.github.io"
+      },
+      {
+        "title":"Resume Website",
+        "category":"A React based resume website template",
+        "image":"resume-website.jpg",
+        "url":"http://www.timbakerdev.com"
+      },
+      {
+        "title":"Smirkspace",
+        "category":"(MVP Only) A React and Meteor based chat University project.",
+        "image":"smirkspace.jpg",
+        "url":"http://www.smirkspace.com"
+      }
+    ]
+  },
+  "testimonials":{
+    "testimonials":[
+      {
+        "text":"Here you should write some nice things that someone has said about you. No lies though, employers can tell when you are lying.",
+        "user":"Kareem Abdul Jabbar"
+      },
+      {
+        "text":"That Tim Baker must be one of the most brilliant developers I've ever met! It is amazing that nobody has hired him yet. Hey you, you should hire this guy, he may be fresh out of University and have zero on the job experience but I am confident that he will be one of your best developers in no time!",
+        "user":"Steve Wozniak... impersonator"
+      }
+    ]
+  }
+}
