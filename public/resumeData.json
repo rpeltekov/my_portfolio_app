@@ -4,8 +4,9 @@
     "occupation":"Developer Consultant in Blockchain at Berkeley",
     "description":"I am currently looking for any and all opportunities to work in software!",
     "image":"profilepic.jpg",
+    "image2":"profilepic2.jpg",
     "bio":"I am a first year UC Berkeley student dual majoring in EECS and Business Administration as part of the Berkeley Management, Entreprenuership, and Technology program. I have a wide passion for not only building and developing cool projects, but bringing them and their underlying ideas to the public.",
-    "contactmessage":"Here is where you should write your message to readers to have them get in contact with you.",
+    "contactmessage":"I would love to talk with you about anything!",
     "email": "robert.peltekov@berkeley.edu",
     "phone": "424-384-7745",
     "address":{
@@ -17,12 +18,12 @@
     "social":[
       {
         "name":"linkedin",
-        "url":"https://www.linkedin.com/in/tim-baker-8420009a/",
+        "url":"https://www.linkedin.com/in/robertpeltekov",
         "className":"fa fa-linkedin"
       },
       {
         "name":"github",
-        "url":"http://github.com/tbakerx",
+        "url":"http://github.com/rpeltekov",
         "className":"fa fa-github"
       }
     ]
@@ -51,39 +52,31 @@
         "description":"Designed and implemented ground system antenna cost models conserving company time and resources. Maintained and handled Boeing proprietary software and add to capabilities. Delivered solutions to supervising engineers at meetings learning business operations and conduct."
       },
       {
-        "company":"Super Cool Studio",
-        "title":"Junior bug fixer",
-        "years":"March 2007 - February 2010",
+        "company":"University of Southern California",
+        "title":"Research Assistant",
+        "years":"July 2017 - March 2019",
         "description":"Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
       }
     ],
     "skills":[
       {
         "name":"Git",
-        "level":"60%"
+        "level":"100%"
       },
       {
-        "name":"Illustrator",
+        "name":"Python",
         "level":"55%"
       },
       {
-        "name":"ReactJs",
+        "name":"Java",
         "level":"50%"
       },
       {
-        "name":"CSS",
+        "name":"Solidity",
         "level":"90%"
       },
       {
-        "name":"HTML5",
-        "level":"80%"
-      },
-      {
-        "name":"VueJs",
-        "level":"50%"
-      },
-      {
-        "name":"MongoDB",
+        "name":"ReactJS",
         "level":"80%"
       }
     ]
