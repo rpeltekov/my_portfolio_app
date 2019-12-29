@@ -6,7 +6,7 @@
     "image":"profilepic.jpg",
     "image2":"profilepic2.jpg",
     "bio":"I am a first year UC Berkeley student dual majoring in EECS and Business Administration as part of the Berkeley Management, Entreprenuership, and Technology program. I have a wide passion for not only building and developing cool projects, but bringing them and their underlying ideas to the public.",
-    "contactmessage":"I would love to talk with you about anything!",
+    "contactmessage":"I'm open to talk about anything from potential opportunities to questions. I would love to chat with you!",
     "email": "robert.peltekov@berkeley.edu",
     "phone": "424-384-7745",
     "address":{
@@ -29,7 +29,7 @@
     ]
   },
   "resume":{
-    "skillmessage":"Here you can create a short write-up of your skills to show off to employers",
+    "skillmessage":"The following are a few skills that I have gained throughout the past couple years:",
     "education":[
       {
         "school":"University of California, Berkeley",
@@ -49,10 +49,10 @@
         "company":"Boeing Co. Satellite Systems",
         "title":"Ground Systems Software Development Intern",
         "years":"June 2018 - August 2018",
-        "description":"Designed and implemented ground system antenna cost models conserving company time and resources. Maintained and handled Boeing proprietary software and add to capabilities. Delivered solutions to supervising engineers at meetings learning business operations and conduct."
+        "description":"Designed and implemented ground system antenna cost models to save company time and resources. Maintained and handled Boeing proprietary software and add to capabilities. Delivered solutions to supervising engineers at meetings learning business operations and conduct."
       },
       {
-        "company":"University of Southern California, Dawlaty Lab",
+        "company":"USC, Dawlaty Lab",
         "title":"Research Assistant",
         "years":"July 2017 - March 2019",
         "description":"Designed and tested experiment finding correlation between structures of photobases Acridine, Quinoline, and Pyridine. Conducted experiments and research physical chemistry projects to effectively learn lab procedures. Worked in chemistry laboratory shadowing graduate student learning instrument operation and graduate chemistry."
@@ -61,95 +61,56 @@
     "activities":[
       {
         "name": "Blockchain at Berkeley",
+        "years": "September 2019 - Present",
         "position": "Developer Consultant",
         "description1": "Blockchain development and research club",
         "description2": "Designed decentralized app and internal crypto-coin with the MERN stack and smart contracts on the Ethereum network. Gained experience in product development, blockchain, consensus mechanisms, solidity smart contracts, and more."
       },
       {
         "name": "StellarXplorers",
+        "years": "September 2016 - June 2019 ",
         "position": "President / Team Captain",
         "description1": "International space satellite mission orbit and part optimization competition",
         "description2": "Programmed interface between STK software and Google Sheets to optimize collection and analysis of competition data. Researched, learned and excelled in satellite orbital mechanics and system optimization to finish 3rd at nationals. Directed all 5 school teams and organized lessons and education schedule resulting in three top-three national awards."
       },
       {
         "name": "VEX Robotics",
+        "years": "June 2016 - June 2019",
         "position": "Vice President / Co-Founder / Team Captain",
         "description1": "International robotics competition",
         "description2": "Developed high fidelity autonomous robot functions to enable team to win Worlds Build Award. Thrived in both control system programming mechanical subsystem design and to develop unique award-winning robots."
       },
       {
         "name": "Cyber Patriots",
+        "years": "September 2015 - June 2019",
         "position": "Team Captain",
         "description1": "National cyber security competition",
         "description2": "Analyzed, configured and secured Cisco networks enabling team’s National qualification as one of 12 from 6000 teams. Organized team to harmonize individual member strengths of Linux, Windows and Cisco security to excel in competition."
       }
     ],
     "skills":[
-      {
-        "name":"Git",
-        "level":"100%"
-      },
-      {
-        "name":"Python",
-        "level":"55%"
-      },
-      {
-        "name":"Java",
-        "level":"50%"
-      },
-      {
-        "name":"Solidity",
-        "level":"90%"
-      },
-      {
-        "name":"ReactJS",
-        "level":"80%"
-      }
+      {"name":"Python"},
+      {"name":"Java"},
+      {"name":"Git"},
+      {"name":"Solidity"},
+      {"name":"ReactJS"},
+      {"name":"Autodesk Inventor"},
+      {"name":"Robot C"}
     ]
   },
   "portfolio":{
     "projects": [
       {
-        "title":"Canadian Wanderlust",
-        "category":"My Travel Blog for my post-university travels",
-        "image":"canadian-wanderlust.jpg",
-        "url":"https://www.canadianwanderlust.com"
+        "title":"Portfolio Website",
+        "category":"My personal info website with contact information",
+        "image":"myportfolio.png",
+        "url":"https://www.robertpeltekov.com"
       },
       {
-        "title":"Fury Fighting Gear",
-        "category":"(offline now) A fighting gear company I started",
-        "image":"fury-fighting-gear.jpg",
-        "url":"http://www.timbakerdev.com"
-      },
-      {
-        "title":"Original Thai Food",
-        "category":"Website I built for a restaurant I like in Thailand",
-        "image":"original-thai-food.jpg",
-        "url":"http://www.timbakerdev.com/originalthaifood.github.io"
-      },
-      {
-        "title":"Resume Website",
-        "category":"A React based resume website template",
-        "image":"resume-website.jpg",
-        "url":"http://www.timbakerdev.com"
-      },
-      {
-        "title":"Smirkspace",
-        "category":"(MVP Only) A React and Meteor based chat University project.",
-        "image":"smirkspace.jpg",
-        "url":"http://www.smirkspace.com"
-      }
-    ]
-  },
-  "testimonials":{
-    "testimonials":[
-      {
-        "text":"Here you should write some nice things that someone has said about you. No lies though, employers can tell when you are lying.",
-        "user":"Kareem Abdul Jabbar"
-      },
-      {
-        "text":"That Tim Baker must be one of the most brilliant developers I've ever met! It is amazing that nobody has hired him yet. Hey you, you should hire this guy, he may be fresh out of University and have zero on the job experience but I am confident that he will be one of your best developers in no time!",
-        "user":"Steve Wozniak... impersonator"
+        "title":"B@B Coin Event Planner",
+        "category":"Developed B@B Coin and an event rsvp system through staking the internal coin for the Blockchain at Berkeley club",
+        "image":"BabCoinLogo.png",
+        "url":"http://blockchain.berkeley.edu"
       }
     ]
   }

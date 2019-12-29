@@ -262,11 +262,21 @@ ul#nav li.current a { color: #F06000; }
 #resume h3 {
    font: 25px/30px 'opensans-bold', sans-serif;
 }
+#resume h4 {
+   font: 25px/30px 'opensans-bold', sans-serif;
+   width: 100%;
+   vertical-align: center;
+}
+#resume h5 {
+   font: 18px/22px 'opensans-bold-italic', sans-serif;
+   color: #58626a;
+
+}
 
 #resume .header-col { padding-top: 9px; }
 #resume .main-col { padding-right: 10%; }
 
-.education, .work {
+.education, .work, .activities {
    margin-bottom: 48px;
    padding-bottom: 24px;
    border-bottom: 1px solid #E8E8E8;
@@ -274,32 +284,43 @@ ul#nav li.current a { color: #F06000; }
 #resume .info {
    font: 16px/24px 'librebaskerville-italic', serif;
    color: #6E7881;
-   margin-bottom: 18px;
-   margin-top: 9px;
+   margin-bottom: 16px;
+   margin-top: 8px;
 }
 #resume .info span {
    margin-right: 5px;
    margin-left: 5px;
 }
 #resume .date {
-   font: 15px/24px 'opensans-regular', sans-serif;
+   font: 18px/24px 'opensans-regular', sans-serif;
    margin-top: 6px;
 }
+
 
 /*----------------------------------------------*/
 /*	Skill Bars
 /*----------------------------------------------*/
-
+.bars .skills {
+    margin-top: 0px;
+    list-style: none;
+}
+.bars li em {
+    font: 14px 'opensans-bold', sans-serif;
+    color: #313131;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: normal;
+    position: relative;
+    top: 0px;
+}
+/*
 .bars {
 	width: 95%;
 	float: left;
 	padding: 0;
 	text-align: left;
 }
-.bars .skills {
-  	margin-top: 36px;
-   list-style: none;
-}
+
 .bars li {
    position: relative;
   	margin-bottom: 60px;
@@ -307,15 +328,7 @@ ul#nav li.current a { color: #F06000; }
   	height: 42px;
   	border-radius: 3px;
 }
-.bars li em {
-	font: 15px 'opensans-bold', sans-serif;
-   color: #313131;
-	text-transform: uppercase;
-   letter-spacing: 2px;
-	font-weight: normal;
-   position: relative;
-	top: -36px;
-}
+
 .bar-expand {
    position: absolute;
    left: 0;
@@ -329,6 +342,8 @@ ul#nav li.current a { color: #F06000; }
    line-height: 42px;
    border-radius: 3px 0 0 3px;
 }
+*/
+
 /*
 .git {
   	-moz-animation: git 2s ease;
@@ -645,70 +660,6 @@ call-to-action .button {
 	color: #D8D8D8;
 }
 
-/* ------------------------------------------------------------------
-/* g. Testimonials
-/* ------------------------------------------------------------------ */
-
-#testimonials {
-   background: #1F1F1F url(../images/testimonials-bg.jpg) no-repeat center center;
-   background-size: cover !important;
-	-webkit-background-size: cover !important;
-   background-attachment: fixed;
-
-   position: relative;
-   min-height: 200px;
-   width: 100%;
-   overflow: hidden;
-}
-#testimonials .text-container {
-   padding-top: 96px;
-   padding-bottom: 66px;
-}
-#testimonials h1 {
-   font: 18px/24px 'opensans-bold', sans-serif;
-   text-transform: uppercase;
-   letter-spacing: 3px;
-   color: #fff;
-}
-#testimonials h1 span { display: none; }
-#testimonials .header-col { padding-top: 9px; }
-#testimonials .header-col h1:before {
-   font-family: 'FontAwesome';
-   content: "\f10d";
-	padding-right: 10px;
-	font-size: 72px;
-   line-height: 72px;
-   text-align: left;
-   float: left;
-   color: #fff;
-}
-
-/*	Blockquotes */
-#testimonials blockquote {
-   margin: 0 0px 30px 0px;
-   padding-left: 0;
-   position: relative;
-   text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
-}
-#testimonials blockquote:before { content: none; }
-#testimonials blockquote p {
-   font-family: 'librebaskerville-italic', serif;
-   padding: 0;
-   font-size: 24px;
-   line-height: 48px;
-   color: #fff
-}
-#testimonials blockquote cite {
-   display: block;
-   font-size: 12px;
-   font-style: normal;
-   line-height: 18px;
-   color: #fff;
-}
-#testimonials blockquote cite:before { content: "\2014 \0020"; }
-#testimonials blockquote cite a,
-#testimonials blockquote cite a:visited { color: #8B9798; border: none }
-
 /* Flex Slider
 /* ------------------------------------------------------------------ */
 
@@ -912,23 +863,7 @@ call-to-action .button {
 }
 
 
-/* Twitter Feed */
-#twitter {
-   margin-top: 12px;
-   padding: 0;
-}
-#twitter li {
-   margin: 6px 0px 12px 0;
-   line-height: 30px;
-}
-#twitter li span {
-   display: block;
-}
-#twitter li b a {
-   font: 13px/36px 'opensans-regular', Sans-serif;
-   color: #474747 !important;
-   border: none;
-}
+
 
 
 /* ------------------------------------------------------------------ */
