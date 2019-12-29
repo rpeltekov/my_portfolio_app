@@ -35,13 +35,13 @@
         "school":"University of California, Berkeley",
         "degree":"B.S. Electrical Engineering + Computer Science / B.S. Business Administration",
         "graduated":"May 2023",
-        "description":"Describe your experience at school, what you learned, what useful skills you have acquired etc."
+        "description":"GPA: 3.77 • Technical GPA: 3.85"
       },
       {
         "school":"Palos Verdes Peninsula High School",
         "degree":"High School Diploma",
         "graduated":"June 2019",
-        "description":"Describe your experience at school, what you learned, what useful skills you have acquired etc."
+        "description":"Valedictorian • GPA: 4.913 • ACT: 35"
       }
     ],
     "work":[
@@ -52,10 +52,36 @@
         "description":"Designed and implemented ground system antenna cost models conserving company time and resources. Maintained and handled Boeing proprietary software and add to capabilities. Delivered solutions to supervising engineers at meetings learning business operations and conduct."
       },
       {
-        "company":"University of Southern California",
+        "company":"University of Southern California, Dawlaty Lab",
         "title":"Research Assistant",
         "years":"July 2017 - March 2019",
-        "description":"Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
+        "description":"Designed and tested experiment finding correlation between structures of photobases Acridine, Quinoline, and Pyridine. Conducted experiments and research physical chemistry projects to effectively learn lab procedures. Worked in chemistry laboratory shadowing graduate student learning instrument operation and graduate chemistry."
+      }
+    ],
+    "activities":[
+      {
+        "name": "Blockchain at Berkeley",
+        "position": "Developer Consultant",
+        "description1": "Blockchain development and research club",
+        "description2": "Designed decentralized app and internal crypto-coin with the MERN stack and smart contracts on the Ethereum network. Gained experience in product development, blockchain, consensus mechanisms, solidity smart contracts, and more."
+      },
+      {
+        "name": "StellarXplorers",
+        "position": "President / Team Captain",
+        "description1": "International space satellite mission orbit and part optimization competition",
+        "description2": "Programmed interface between STK software and Google Sheets to optimize collection and analysis of competition data. Researched, learned and excelled in satellite orbital mechanics and system optimization to finish 3rd at nationals. Directed all 5 school teams and organized lessons and education schedule resulting in three top-three national awards."
+      },
+      {
+        "name": "VEX Robotics",
+        "position": "Vice President / Co-Founder / Team Captain",
+        "description1": "International robotics competition",
+        "description2": "Developed high fidelity autonomous robot functions to enable team to win Worlds Build Award. Thrived in both control system programming mechanical subsystem design and to develop unique award-winning robots."
+      },
+      {
+        "name": "Cyber Patriots",
+        "position": "Team Captain",
+        "description1": "National cyber security competition",
+        "description2": "Analyzed, configured and secured Cisco networks enabling team’s National qualification as one of 12 from 6000 teams. Organized team to harmonize individual member strengths of Linux, Windows and Cisco security to excel in competition."
       }
     ],
     "skills":[
