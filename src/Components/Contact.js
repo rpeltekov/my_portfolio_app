@@ -1,6 +1,44 @@
 import React, {Component} from 'react';
+import * as emailjs from 'emailjs-com';
 
 class Contact extends Component {
+    constructor(props) {
+        super(props)
+
+        this.setState({
+            contactName: '',
+            contactEmail: '',
+            contactSubject: '',
+            contactMessage: ''
+        })
+
+        this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    handleChange = e => {
+        this.setState({[e.target.name]: e.target.value})
+    }
+
+    handleSubmit(e) {
+        e.preventDefault()
+
+        console.log('we in submit')
+
+        emailjs.send(
+            'gmail', 'template_moZABJMy',
+            {from_name: this.state.contactName, from_email: this.state.contactEmail, subject: this.state.contactSubject, message_html: this.state.contactMessage}
+        ).then(res => {
+            console.log('Email successfully sent!')
+        }).catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
+
+        this.setState({
+            contactName: '',
+            contactEmail: '',
+            contactSubject: '',
+            contactMessage: ''
+        })
+    }
     render() {
 
         if (this.props.data) {
@@ -9,26 +47,17 @@ class Contact extends Component {
 
         return (
             <section id="contact">
-
                 <div className="row section-head">
-
                     <div className="two columns header-col">
-
                         <h1><span>Get In Touch.</span></h1>
-
                     </div>
-
                     <div className="ten columns">
-
                         <p className="lead">{message}</p>
-
                     </div>
-
                 </div>
-
                 <div className="row">
                     <div className="eight columns">
-                        <form action="" method="post" id="contactForm" name="contactForm">
+                        <form onSubmit={this.handleSubmit} method="post" id="contactForm" name="contactForm">
                             <fieldset>
                                 <div>
                                     <label htmlFor="contactName">Name <span className="required">*</span></label>
@@ -47,19 +76,15 @@ class Contact extends Component {
                                 </div>
                                 <div>
                                     <label htmlFor="contactMessage">Message <span className="required">*</span></label>
-                                    <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+                                    <textarea type="textarea" id="contactMessage"
+                                           name="contactMessage" onChange={this.handleChange}/>
                                 </div>
                                 <div>
-                                    <button className="submit">Submit</button>
+                                    <button className="submit" onClick={this.handleSubmit}>Submit</button>
                                     <span id="image-loader"><img alt="" src="images/loader.gif"/></span>
                                 </div>
                             </fieldset>
                         </form>
-
-                        <div id="message-warning"> Error boy</div>
-                        <div id="message-success">
-                            <i className="fa fa-check"></i>Your message was sent, thank you!<br/>
-                        </div>
                     </div>
                 </div>
             </section>
