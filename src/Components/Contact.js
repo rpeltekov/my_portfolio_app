@@ -16,6 +16,10 @@ class Contact extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+    componentDidMount() {
+        console.log(this)
+    }
+
     handleChange = e => {
         this.setState({[e.target.name]: e.target.value})
     }
@@ -27,7 +31,8 @@ class Contact extends Component {
 
         emailjs.send(
             'gmail', 'template_moZABJMy',
-            {from_name: this.state.contactName, from_email: this.state.contactEmail, subject: this.state.contactSubject, message_html: this.state.contactMessage}
+            {from_name: this.state.contactName, from_email: this.state.contactEmail, subject: this.state.contactSubject, message_html: this.state.contactMessage},
+            'user_UpKZMAyS3KwQoOhmVm3Re'
         ).then(res => {
             console.log('Email successfully sent!')
         }).catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
@@ -57,7 +62,7 @@ class Contact extends Component {
                 </div>
                 <div className="row">
                     <div className="eight columns">
-                        <form onSubmit={this.handleSubmit} method="post" id="contactForm" name="contactForm">
+                        <form onSubmit={this.handleSubmit} id="contactForm" name="contactForm">
                             <fieldset>
                                 <div>
                                     <label htmlFor="contactName">Name <span className="required">*</span></label>
@@ -81,7 +86,6 @@ class Contact extends Component {
                                 </div>
                                 <div>
                                     <button className="submit" onClick={this.handleSubmit}>Submit</button>
-                                    <span id="image-loader"><img alt="" src="images/loader.gif"/></span>
                                 </div>
                             </fieldset>
                         </form>

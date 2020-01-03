@@ -137,29 +137,6 @@
 /*	contact form
 ------------------------------------------------------*/
 
-   $('form#contactForm button.submit').click(function() {
-
-      $('#image-loader').fadeIn();
-
-      var data = JSON.stringify({from_name: $('#contactForm #contactName').val(),
-                                        from_email: $('#contactForm #contactEmail').val(),
-                                        subject: $('#contactForm #contactSubject').val(),
-                                        message: $('#contactForm #contactMessage').val()});
-
-       // if (msg == 'OK') {
-       //     $('#image-loader').fadeOut();
-       //     $('#message-warning').hide();
-       //     $('#contactForm').fadeOut();
-       //     $('#message-success').fadeIn();
-       // }
-       // // There was an error
-       // else {
-       //     $('#image-loader').fadeOut();
-       //     $('#message-warning').html(msg);
-       //     $('#message-warning').fadeIn();
-       // };
-      return false;
-   });
 
 
 });
