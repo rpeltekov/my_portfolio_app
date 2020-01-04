@@ -192,7 +192,7 @@ class Contact extends Component {
                                     {(errorCount !== null
                                         && formSubmitAttempt > 0
                                         && !formSubmitted)
-                                        ? <span className="message-warning">Form is {formValid
+                                        ? <span className="message-success">Form is {formValid
                                                                                     ? 'ready to submit!'
                                                                                     : 'invalid ❌'}</span>
                                         : (formSubmitted
