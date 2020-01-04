@@ -2,11 +2,12 @@ import React, {Component} from 'react';
 import * as emailjs from 'emailjs-com';
 
 const validEmailRegex =
+    // eslint-disable-next-line no-useless-escape
     RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
 
 class Contact extends Component {
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
             contactName: '',
@@ -23,12 +24,12 @@ class Contact extends Component {
             errorCount: null,
             formSubmitAttempt: 0,
             formSubmitted: false
-        };
+        }
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.validateForm = this.validateForm.bind(this);
-        this.countErrors = this.countErrors.bind(this);
+        this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.validateForm = this.validateForm.bind(this)
+        this.countErrors = this.countErrors.bind(this)
     }
 
     componentDidMount() {
@@ -113,7 +114,7 @@ class Contact extends Component {
                 'user_UpKZMAyS3KwQoOhmVm3Re'
             ).then(res => {
                 console.log('Email successfully sent!')
-                this.setState({['formSubmitted']: true})
+                this.setState({formSubmitted: true})
             }).catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
 
         }else{
@@ -196,7 +197,10 @@ class Contact extends Component {
                                                                                     ? 'ready to submit!'
                                                                                     : 'invalid ❌'}</span>
                                         : (formSubmitted
-                                            ? <span className="message-success">✅ Form is submitted! Refresh to send another!</span>
+                                            ? <span className="message-success"
+                                                    role="img"
+                                                    aria-label="check"
+                                                >✅ Form is submitted! Refresh to send another!</span>
                                             : 'Form not submitted')}
                                 </div>
 

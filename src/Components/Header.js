@@ -7,6 +7,7 @@ class Header extends Component {
             var profilepic = "images/" + this.props.data.image;
             var name = this.props.data.name;
             var occupation = this.props.data.occupation;
+            var occupationorg = this.props.data.occupationorg;
             var description = this.props.data.description;
             var city = this.props.data.address.city;
             var networks = this.props.data.social.map(function (network) {
@@ -38,7 +39,7 @@ class Header extends Component {
                     </div>
                     <div className="banner-text">
                         <h1 className="responsive-headline">I'm {name}.</h1>
-                        <h3>I'm a {city} based <span>{occupation}</span>. {description}</h3>
+                        <h3>I'm a {city} based <span>{occupation}</span> {occupationorg}. {description}</h3>
                         <hr/>
                         <ul className="social">
                             {networks}
