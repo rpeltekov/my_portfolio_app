@@ -14,13 +14,15 @@ class Contact extends Component {
             contactSubject: '',
             contactMessage: '',
             errors: {
-                contactName: '',
-                contactEmail: '',
-                contactSubject: '',
-                contactMessage: ''
+                contactName: null,
+                contactEmail: null,
+                contactSubject: null,
+                contactMessage: null
             },
             formValid: false,
-            errorCount: null
+            errorCount: null,
+            formSubmitAttempt: 0,
+            formSubmitted: false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -31,6 +33,24 @@ class Contact extends Component {
 
     componentDidMount() {
         console.log(this)
+    }
+
+    validateForm = (errors) => {
+        let valid = true;
+        Object.values(errors).forEach(
+            // if we have an error string set valid to false
+            (val) => (val === null || val.length > 0) && (valid = false)
+        );
+
+        return valid;
+    }
+
+    countErrors = (errors) => {
+        let count = 0;
+        Object.values(errors).forEach(
+            (val) => (val === null || val.length > 0) && (count = count+1)
+        );
+        return count;
     }
 
     handleChange = e => {
@@ -67,35 +87,20 @@ class Contact extends Component {
                 break;
         }
 
-        this.setState({errors, [e.target.name]: e.target.value})
-    }
-
-    validateForm = (errors) => {
-        let valid = true;
-        Object.values(errors).forEach(
-            // if we have an error string set valid to false
-            (val) => val.length > 0 && (valid = false)
-        );
-
-        return valid;
-    }
-
-    countErrors = (errors) => {
-        let count = 0;
-        Object.values(errors).forEach(
-            (val) => val.length > 0 && (count = count+1)
-        );
-        return count;
+        this.setState({errors, [e.target.name]: e.target.value,
+                            formValid: this.validateForm(this.state.errors),
+                            errorCount: this.countErrors(this.state.errors)})
     }
 
     handleSubmit(e) {
         e.preventDefault()
 
         console.log('Validating form')
-        this.setState({formValid: this.validateForm(this.state.errors)});
-        this.setState({errorCount: this.countErrors(this.state.errors)});
+        this.setState({formValid: this.validateForm(this.state.errors),
+                            errorCount: this.countErrors(this.state.errors),
+                            formSubmitAttempt: this.state.formSubmitAttempt + 1})
 
-        if(this.state.formValid) {
+        if(this.state.formValid && !this.state.formSubmitted) {
             console.info('Valid Form; sending email')
 
             emailjs.send(
@@ -108,6 +113,7 @@ class Contact extends Component {
                 'user_UpKZMAyS3KwQoOhmVm3Re'
             ).then(res => {
                 console.log('Email successfully sent!')
+                this.setState({['formSubmitted']: true})
             }).catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
 
         }else{
@@ -140,36 +146,43 @@ class Contact extends Component {
                                     <label htmlFor="contactName">Name <span className="required">*</span></label>
                                     <input type="text" defaultValue="" size="35" id="contactName" name="contactName"
                                            onChange={this.handleChange}/>
-                                    {errors.contactName.length > 0 &&
+                                    {(errors.contactName === null || errors.contactName.length > 0) &&
                                         <span className='error'>{errors.contactName}</span>}
                                 </div>
                                 <div>
                                     <label htmlFor="contactEmail">Email <span className="required">*</span></label>
                                     <input type="text" defaultValue="" size="35" id="contactEmail" name="contactEmail"
                                            onChange={this.handleChange}/>
-                                    {errors.contactEmail.length > 0 &&
+                                    {(errors.contactEmail === null || errors.contactEmail.length > 0) &&
                                         <span className='error'>{errors.contactEmail}</span>}
                                 </div>
                                 <div>
                                     <label htmlFor="contactSubject">Subject <span className="required">*</span></label>
                                     <input type="text" defaultValue="" size="35" id="contactSubject"
                                            name="contactSubject" onChange={this.handleChange}/>
-                                    {errors.contactSubject.length > 0 &&
+                                    {(errors.contactSubject === null || errors.contactSubject.length > 0) &&
                                         <span className='error'>{errors.contactSubject}</span>}
                                 </div>
                                 <div>
                                     <label htmlFor="contactMessage">Message <span className="required">*</span></label>
                                     <textarea type="textarea" id="contactMessage"
                                            name="contactMessage" onChange={this.handleChange}/>
-                                    {errors.contactMessage.length > 0 &&
+                                    {(errors.contactMessage === null || errors.contactMessage.length > 0) &&
                                         <span className='error'>{errors.contactMessage}</span>}
                                 </div>
-                                <div>
+                                <div className='row'>
                                     <button className="submit" onClick={this.handleSubmit}>Submit</button>
                                 </div>
-                                {this.state.errorCount !== null ?
-                                    <p className="form-status">Form is {formValid ? 'Submitted ✅' : 'invalid ❌'}</p>
-                                    : 'Form not submitted'}
+                                {(this.state.errorCount !== null
+                                    && this.state.formSubmitAttempt > 0
+                                    && !this.state.formSubmitted)
+                                    ? <p className="form-status">Form is {formValid
+                                                                            ? 'ready to submit!'
+                                                                            : 'invalid ❌'}</p>
+                                    : (this.state.formSubmitted
+                                            ? <p className="form-status">✅ Form is submitted! Refresh to send another!</p>
+                                            : 'Form not submitted')}
+
                             </fieldset>
                         </form>
                     </div>
