@@ -127,7 +127,7 @@ class Contact extends Component {
             var message = this.props.data.contactmessage;
 
         }
-        const {errors, formValid} = this.state;
+        const {errors, formValid, formSubmitted, formSubmitAttempt, errorCount} = this.state;
         return (
             <section id="contact">
                 <div className="row section-head">
@@ -146,42 +146,60 @@ class Contact extends Component {
                                     <label htmlFor="contactName">Name <span className="required">*</span></label>
                                     <input type="text" defaultValue="" size="35" id="contactName" name="contactName"
                                            onChange={this.handleChange}/>
-                                    {(errors.contactName === null || errors.contactName.length > 0) &&
-                                        <span className='error'>{errors.contactName}</span>}
+                                    <span style={{display: 'inline-block', width: '26%'}}/>
+                                    <span className='message-warning'>{(errors.contactName === null
+                                                                        || errors.contactName.length > 0)
+                                                                        ? errors.contactName
+                                                                        : ''}
+                                    </span>
                                 </div>
                                 <div>
                                     <label htmlFor="contactEmail">Email <span className="required">*</span></label>
                                     <input type="text" defaultValue="" size="35" id="contactEmail" name="contactEmail"
                                            onChange={this.handleChange}/>
-                                    {(errors.contactEmail === null || errors.contactEmail.length > 0) &&
-                                        <span className='error'>{errors.contactEmail}</span>}
+                                    <span style={{display: 'inline-block', width: '26%'}}/>
+                                    <span className='message-warning'>{(errors.contactEmail === null
+                                                                        || errors.contactEmail.length > 0)
+                                                                        ? errors.contactEmail
+                                                                        : ''}
+                                    </span>
                                 </div>
                                 <div>
                                     <label htmlFor="contactSubject">Subject <span className="required">*</span></label>
                                     <input type="text" defaultValue="" size="35" id="contactSubject"
                                            name="contactSubject" onChange={this.handleChange}/>
-                                    {(errors.contactSubject === null || errors.contactSubject.length > 0) &&
-                                        <span className='error'>{errors.contactSubject}</span>}
+                                    <span style={{display: 'inline-block', width: '26%'}}/>
+                                    <span className='message-warning'>{(errors.contactSubject === null
+                                                                        || errors.contactSubject.length > 0)
+                                                                        ? errors.contactSubject
+                                                                        : ''}
+                                    </span>
                                 </div>
                                 <div>
                                     <label htmlFor="contactMessage">Message <span className="required">*</span></label>
                                     <textarea type="textarea" id="contactMessage"
                                            name="contactMessage" onChange={this.handleChange}/>
-                                    {(errors.contactMessage === null || errors.contactMessage.length > 0) &&
-                                        <span className='error'>{errors.contactMessage}</span>}
+                                    <span style={{display: 'inline-block', width: '26%'}}/>
+                                    <span className='message-warning'>{(errors.contactMessage=== null
+                                                                        || errors.contactMessage.length > 0)
+                                                                        ? errors.contactMessage
+                                                                        : ''}
+                                    </span>
                                 </div>
                                 <div className='row'>
                                     <button className="submit" onClick={this.handleSubmit}>Submit</button>
-                                </div>
-                                {(this.state.errorCount !== null
-                                    && this.state.formSubmitAttempt > 0
-                                    && !this.state.formSubmitted)
-                                    ? <p className="form-status">Form is {formValid
-                                                                            ? 'ready to submit!'
-                                                                            : 'invalid ❌'}</p>
-                                    : (this.state.formSubmitted
-                                            ? <p className="form-status">✅ Form is submitted! Refresh to send another!</p>
+                                    <span style={{display:'inline-block', width:'10px'}}/>
+                                    {(errorCount !== null
+                                        && formSubmitAttempt > 0
+                                        && !formSubmitted)
+                                        ? <span className="message-warning">Form is {formValid
+                                                                                    ? 'ready to submit!'
+                                                                                    : 'invalid ❌'}</span>
+                                        : (formSubmitted
+                                            ? <span className="message-success">✅ Form is submitted! Refresh to send another!</span>
                                             : 'Form not submitted')}
+                                </div>
+
 
                             </fieldset>
                         </form>

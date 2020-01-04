@@ -807,7 +807,7 @@ call-to-action .button {
    padding: 18px 20px;
 	color: #eee;
 	background: #373233;
-	margin-bottom: 42px;
+    margin-top: 20px;
 	border: 0;
 	outline: none;
    font-size: 15px;
@@ -840,29 +840,16 @@ call-to-action .button {
 	color: #11ABB0;
 	font-size: 13px;
 }
-#message-warning, #message-success {
-   display: none;
-	background: #0F0F0F;
-	padding: 24px 24px;
-	margin-bottom: 36px;
-   width: 65%;
-   margin-left: 26%;
+#contact span.message-warning {
+   display: inline-block;
+   color: #f1271a;
+	margin-bottom: 5px;
 }
-#message-warning { color: #D72828; }
-#message-success { color: #11ABB0; }
-
-#message-warning i,
-#message-success i {
-   margin-right: 10px;
+#contact span.message-success{
+   display: inline-block;
+   color: #EBEEEE;
+   margin-bottom: 5px;
 }
-#image-loader {
-   display: none;
-   position: relative;
-   left: 18px;
-   top: 17px;
-}
-
-
 
 
 
