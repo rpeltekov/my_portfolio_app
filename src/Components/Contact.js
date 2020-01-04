@@ -1,19 +1,30 @@
 import React, {Component} from 'react';
 import * as emailjs from 'emailjs-com';
 
+const validEmailRegex =
+    RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+
 class Contact extends Component {
     constructor(props) {
-        super(props)
+        super(props);
+        console.log("constructor called")
 
-        this.setState({
+        this.state = {
             contactName: '',
             contactEmail: '',
             contactSubject: '',
-            contactMessage: ''
-        })
+            contactMessage: '',
+            errors: {
+                contactName: '',
+                contactEmail: '',
+                contactSubject: '',
+                contactMessage: ''
+            }
+        };
 
-        this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.validateForm = this.validateForm.bind(this);
     }
 
     componentDidMount() {
@@ -21,13 +32,63 @@ class Contact extends Component {
     }
 
     handleChange = e => {
-        this.setState({[e.target.name]: e.target.value})
+        e.preventDefault();
+        const { name, value } = e.target;
+        let errors = this.state['errors'];
+
+        switch (name) {
+            case 'contactName':
+                errors.contactName =
+                    value.length === 0
+                        ? 'Name cannot be empty!'
+                        : '';
+                break;
+            case 'contactEmail':
+                errors.contactEmail =
+                    validEmailRegex.test(value)
+                        ? ''
+                        : 'Email is not valid!';
+                break;
+            case 'contactSubject':
+                errors.contactSubject =
+                    value.length === 0
+                        ? 'Subject cannot be empty!'
+                        : '';
+                break;
+            case 'contactMessage':
+                errors.contactMessage =
+                    value.length === 0
+                        ? 'Message cannot be empty!'
+                        : '';
+                break;
+            default:
+                break;
+        }
+        this.setState({errors, [e.target.name]: e.target.value}, () => {
+            console.log(errors)
+        })
+    }
+
+    validateForm = (errors) => {
+        let valid = true;
+        Object.values(errors).forEach(
+            // if we have an error string set valid to false
+            (val) => val.length > 0 && (valid = false)
+        );
+        
+        return valid;
     }
 
     handleSubmit(e) {
         e.preventDefault()
 
-        console.log('we in submit')
+        console.log('submitting form')
+
+        if(this.validateForm(this.state.errors)) {
+            console.info('Valid Form')
+        }else{
+            console.error('Invalid Form')
+        }
 
         emailjs.send(
             'gmail', 'template_moZABJMy',
@@ -41,9 +102,16 @@ class Contact extends Component {
             contactName: '',
             contactEmail: '',
             contactSubject: '',
-            contactMessage: ''
+            contactMessage: '',
+            errors: {
+                contactName: '',
+                contactEmail: '',
+                contactSubject: '',
+                contactMessage: ''
+            }
         })
     }
+
     render() {
 
         if (this.props.data) {
@@ -75,7 +143,7 @@ class Contact extends Component {
                                            onChange={this.handleChange}/>
                                 </div>
                                 <div>
-                                    <label htmlFor="contactSubject">Subject</label>
+                                    <label htmlFor="contactSubject">Subject <span className="required">*</span></label>
                                     <input type="text" defaultValue="" size="35" id="contactSubject"
                                            name="contactSubject" onChange={this.handleChange}/>
                                 </div>
