@@ -7,7 +7,6 @@ const validEmailRegex =
 class Contact extends Component {
     constructor(props) {
         super(props);
-        console.log("constructor called")
 
         this.state = {
             contactName: '',
@@ -19,12 +18,15 @@ class Contact extends Component {
                 contactEmail: '',
                 contactSubject: '',
                 contactMessage: ''
-            }
+            },
+            formValid: false,
+            errorCount: null
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.validateForm = this.validateForm.bind(this);
+        this.countErrors = this.countErrors.bind(this);
     }
 
     componentDidMount() {
@@ -64,9 +66,8 @@ class Contact extends Component {
             default:
                 break;
         }
-        this.setState({errors, [e.target.name]: e.target.value}, () => {
-            console.log(errors)
-        })
+
+        this.setState({errors, [e.target.name]: e.target.value})
     }
 
     validateForm = (errors) => {
@@ -75,49 +76,52 @@ class Contact extends Component {
             // if we have an error string set valid to false
             (val) => val.length > 0 && (valid = false)
         );
-        
+
         return valid;
+    }
+
+    countErrors = (errors) => {
+        let count = 0;
+        Object.values(errors).forEach(
+            (val) => val.length > 0 && (count = count+1)
+        );
+        return count;
     }
 
     handleSubmit(e) {
         e.preventDefault()
 
-        console.log('submitting form')
+        console.log('Validating form')
+        this.setState({formValid: this.validateForm(this.state.errors)});
+        this.setState({errorCount: this.countErrors(this.state.errors)});
 
-        if(this.validateForm(this.state.errors)) {
-            console.info('Valid Form')
+        if(this.state.formValid) {
+            console.info('Valid Form; sending email')
+
+            emailjs.send(
+                'gmail', 'template_moZABJMy',
+                {from_name: this.state.contactName,
+                                from_email: this.state.contactEmail,
+                                subject: this.state.contactSubject,
+                                message_html: this.state.contactMessage
+                },
+                'user_UpKZMAyS3KwQoOhmVm3Re'
+            ).then(res => {
+                console.log('Email successfully sent!')
+            }).catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
+
         }else{
             console.error('Invalid Form')
         }
-
-        emailjs.send(
-            'gmail', 'template_moZABJMy',
-            {from_name: this.state.contactName, from_email: this.state.contactEmail, subject: this.state.contactSubject, message_html: this.state.contactMessage},
-            'user_UpKZMAyS3KwQoOhmVm3Re'
-        ).then(res => {
-            console.log('Email successfully sent!')
-        }).catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
-
-        this.setState({
-            contactName: '',
-            contactEmail: '',
-            contactSubject: '',
-            contactMessage: '',
-            errors: {
-                contactName: '',
-                contactEmail: '',
-                contactSubject: '',
-                contactMessage: ''
-            }
-        })
     }
 
     render() {
 
         if (this.props.data) {
             var message = this.props.data.contactmessage;
-        }
 
+        }
+        const {errors, formValid} = this.state;
         return (
             <section id="contact">
                 <div className="row section-head">
@@ -136,25 +140,36 @@ class Contact extends Component {
                                     <label htmlFor="contactName">Name <span className="required">*</span></label>
                                     <input type="text" defaultValue="" size="35" id="contactName" name="contactName"
                                            onChange={this.handleChange}/>
+                                    {errors.contactName.length > 0 &&
+                                        <span className='error'>{errors.contactName}</span>}
                                 </div>
                                 <div>
                                     <label htmlFor="contactEmail">Email <span className="required">*</span></label>
                                     <input type="text" defaultValue="" size="35" id="contactEmail" name="contactEmail"
                                            onChange={this.handleChange}/>
+                                    {errors.contactEmail.length > 0 &&
+                                        <span className='error'>{errors.contactEmail}</span>}
                                 </div>
                                 <div>
                                     <label htmlFor="contactSubject">Subject <span className="required">*</span></label>
                                     <input type="text" defaultValue="" size="35" id="contactSubject"
                                            name="contactSubject" onChange={this.handleChange}/>
+                                    {errors.contactSubject.length > 0 &&
+                                        <span className='error'>{errors.contactSubject}</span>}
                                 </div>
                                 <div>
                                     <label htmlFor="contactMessage">Message <span className="required">*</span></label>
                                     <textarea type="textarea" id="contactMessage"
                                            name="contactMessage" onChange={this.handleChange}/>
+                                    {errors.contactMessage.length > 0 &&
+                                        <span className='error'>{errors.contactMessage}</span>}
                                 </div>
                                 <div>
                                     <button className="submit" onClick={this.handleSubmit}>Submit</button>
                                 </div>
+                                {this.state.errorCount !== null ?
+                                    <p className="form-status">Form is {formValid ? 'Submitted ✅' : 'invalid ❌'}</p>
+                                    : 'Form not submitted'}
                             </fieldset>
                         </form>
                     </div>
