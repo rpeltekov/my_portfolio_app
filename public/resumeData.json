@@ -2,7 +2,7 @@
   "main": {
     "name":"Robert Peltekov",
     "occupation":"Developer Consultant",
-    "occupationorg":"in Blockchain at Berkeley organization",
+    "occupationorg":"in the Blockchain at Berkeley organization",
     "description":"I am currently looking for any and all opportunities to work in software engineering!",
     "image":"profilepic.jpg",
     "image2":"profilepic2.jpg",
@@ -106,13 +106,13 @@
         "title":"Portfolio Website",
         "category":"My personal info website with contact information",
         "image":"myportfolio.png",
-        "url":"https://www.robertpeltekov.com"
+        "url":"www.robertpeltekov.com"
       },
       {
         "title":"B@B Coin Event Planner",
         "category":"Developed B@B Coin and an event rsvp system through staking the internal coin for the Blockchain at Berkeley club",
         "image":"BabCoinLogo.png",
-        "url":"http://blockchain.berkeley.edu"
+        "url":"blockchain.berkeley.edu"
       }
     ]
   }
