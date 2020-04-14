@@ -3,7 +3,7 @@
     "name":"Robert Peltekov",
     "occupation":"Developer Consultant",
     "occupationorg":"in the Blockchain at Berkeley organization",
-    "description":"I am currently looking for any and all opportunities to work in software engineering!",
+    "description":"I am currently looking for any and all opportunities to work in software and electrical engineering!",
     "image":"profilepic.jpg",
     "image2":"profilepic2.jpg",
     "bio":"I am a first year UC Berkeley student dual majoring in EECS and Business Administration as part of the Berkeley Management, Entrepreneurship, and Technology program. I have a wide passion for not only building and developing cool projects, but bringing them and their underlying ideas to the public.",
@@ -15,7 +15,7 @@
       "state":"California"
     },
     "website": "http://www.robertpeltekov.com",
-    "resumedownload":"12_27_19_Peltekov_Robert_website.pdf",
+    "resumedownload":"Peltekov_Robert.pdf",
     "social":[
       {
         "name":"linkedin",
@@ -109,10 +109,22 @@
         "url":"www.robertpeltekov.com"
       },
       {
+        "title":"Zoogle Assistant",
+        "category":"An implementation of the Google Assistant as a live responce Zoom Call Bot",
+        "image":"zoogle.jpg",
+        "url":"https://github.com/rpeltekov/Zoogle"
+      },
+      {
         "title":"B@B Coin Event Planner",
         "category":"Developed B@B Coin and an event rsvp system through staking the internal coin for the Blockchain at Berkeley club",
         "image":"BabCoinLogo.png",
-        "url":"blockchain.berkeley.edu"
+        "url":"https://github.com/fazerlicourice7/BaBCoin"
+      },
+      {
+        "title":"Bloqi",
+        "category":"Blockchain verification for transcripts, enrollment & certifications.",
+        "image":"bloqi.png",
+        "url":"https://github.com/rpeltekov/Bloqi-Academic-Credential-Verification"
       }
     ]
   }
